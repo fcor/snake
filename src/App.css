@@ -1,0 +1,29 @@
+.app{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.grid-row{
+  display: flex;
+  flex-direction: row;
+}
+
+.grid-cell{
+  width: 15px;
+  height: 15px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+}
+
+.grid-cell-border{
+  background-color: black;
+}
+
+.grid-cell-snake{
+  background-color: black;
+}
+
+.grid-cell-snack{
+  background-color: blue;
+}

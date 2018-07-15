@@ -27,3 +27,7 @@
 .grid-cell-snack{
   background-color: blue;
 }
+
+.grid-cell-hit {
+  background-color: red;
+}

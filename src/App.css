@@ -1,7 +1,16 @@
+@font-face {
+  font-family: 'PressStart';
+  src: local('PressStart'), url(./fonts/PressStart2P-Regular.ttf) format('truetype');
+}
+
 .app{
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
+  font-family: 'PressStart';
+  height: 100vh;
+
 }
 
 .grid-row{
@@ -30,4 +39,27 @@
 
 .grid-cell-hit {
   background-color: red;
+}
+
+.typing{
+  font-size: 30px;
+}
+
+.Typist .Cursor {
+  display: inline-block;
+}
+.Typist .Cursor--blinking {
+  opacity: 1;
+  animation: blink 1s linear infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

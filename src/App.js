@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import cs from 'classnames'
+import Typist from 'react-typist'
 import './App.css';
 
 const GRID_SIZE = 35
@@ -160,16 +161,24 @@ class App extends Component {
     }
   }
 
+  onIntroDone = () => {
+    console.log("Animation done");
+  }
+
   render() {
     const { playground, snake, snack } = this.state
     return (
       <div className="app">
-        <h1>Snake!</h1>
+        <Typist  onTypingDone={this.onIntroDone} cursor={{show: true, blink: true}} className="typing">
+            Old School Snake is back!
+            <Typist.Delay ms={3000} />
+        </Typist>
+        {/* <h1>Snake!</h1>
         <Grid
           snake={snake}
           snack={snack}
           isGameOver={playground.isGameOver}
-         />
+         /> */}
       </div>
     )
   }

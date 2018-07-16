@@ -33,7 +33,7 @@ class App extends Component {
       } else if (step === 'PLAYGROUND') {
         return <Snake isGameOver={this.isGameOver} />
       } else if (step === 'GAMEOVER') {
-        return <GameOver />
+        return <GameOver playAgain={this.isIntroDone} />
       }
     }
 
@@ -51,16 +51,53 @@ const Intro = ({ isIntroDone }) =>
            cursor={{show: true, blink: true}}
            className="typing">
       Old School Snake is back!
-      <Typist.Delay ms={3000} />
+      <Typist.Delay ms={2000} />
   </Typist>
 
-const GameOver = () =>
-  <Typist  cursor={{show: true, blink: true}}
-           className="typing"
-           // onTypingDone={isIntroDone}
-           >
-      Game Over!
-      <Typist.Delay ms={3000} />
-  </Typist>
+class GameOver extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      renderMsg: false
+    }
+  }
+
+  onHeaderTyped = () => {
+    this.setState({ renderMsg: true })
+  }
+
+  render(){
+    const { renderMsg } = this.state
+    const { playAgain } = this.props
+    return(
+      <div className="gameover">
+        <Typist  cursor={{show: false, blink: true}}
+                 className="typing"
+                 onTypingDone={this.onHeaderTyped}
+          >
+            Game Over!
+            <Typist.Delay ms={1500} />
+        </Typist>
+        {renderMsg &&
+          <Typist cursor={{show: true, blink: true}}
+                className="again"
+                startDelay={1000}
+          >
+            Want to play again?
+            <Typist.Delay ms={1200} />
+             <br />
+             <br />
+            <span onClick={playAgain}> Yes! </span>
+            <Typist.Delay ms={700} />
+            <br />
+            <br />
+            No
+        </Typist>}
+      </div>
+    )
+  }
+}
+
+
 
 export default App

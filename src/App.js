@@ -84,11 +84,11 @@ class GameOver extends Component {
                 startDelay={1000}
           >
             Want to play again?
-            <Typist.Delay ms={1200} />
+            <Typist.Delay ms={800} />
              <br />
              <br />
             <span onClick={playAgain}> Yes! </span>
-            <Typist.Delay ms={700} />
+            <Typist.Delay ms={400} />
             <br />
             <br />
             No

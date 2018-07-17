@@ -2,8 +2,10 @@
   "name": "snake",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://fcor.github.io/snake",
   "dependencies": {
     "classnames": "^2.2.6",
+    "gh-pages": "^1.2.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-typist": "^2.0.4"
@@ -15,6 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
   }
 }
